@@ -127,4 +127,75 @@ const sumThree = function (n1, n2, n3 = 0) {
   alert(total)
 }
 
+// qui non c'è total :(
+
 sumThree(2, 6)
+
+// VALORI DI RITORNO DI UNA FUNZIONE
+// Una funzione, opzionalmente, può RITORNARE un valore ALLA FINE della sua esecuzione.
+// Se una funzione RITORNA un valore, sarà possibile mantenere quel risultato anche al
+// di FUORI della funzione, una volta che la sua esecuzione sarà ormai terminata.
+
+const anotherSum = function (n1, n2) {
+  const result = n1 + n2
+  return result
+}
+
+const r = anotherSum(7, 8)
+console.log('R VALE', r) // 15
+
+// creiamo ora un po' di funzioncine separate per effettuare delle op. matematiche
+
+const sommaDueNumeri = function (n1, n2) {
+  const risultato = n1 + n2
+  return risultato
+}
+
+const arrotonda = function (numero) {
+  const valoreArrotondato = Math.floor(numero) // abbatte all'interno più basso
+  return valoreArrotondato
+}
+
+const moltiplicaPerTre = function (numero) {
+  const valoreMoltiplicato = numero * 3
+  return valoreMoltiplicato
+}
+
+let valore = sommaDueNumeri(5.65, 9.99) // valore è diventato 15.64
+valore = arrotonda(valore) // valore ora vale 15
+valore = moltiplicaPerTre(valore) // valore ora vale 45
+console.log('Il risultato delle mie operazioni è', valore)
+
+// l'esecuzione di una funzione con un valore di ritorno si comporta
+// esattamente come il valore di ritorno stesso!
+console.log(moltiplicaPerTre(7) + 100)
+
+const verificaEta = function (eta) {
+  if (eta >= 18) {
+    return 'maggiorenne'
+  } else {
+    return 'minorenne'
+  }
+}
+
+console.log(
+  'Il controllo della mia età ha portato un risultato: ' + verificaEta(20)
+)
+
+console.log(
+  'Il controllo della mia età ha portato un risultato: ' + verificaEta(17)
+)
+
+// funzione che calcola un numero di un D6 e lo ritorna
+const lanciaDado = function () {
+  const lancio = Math.ceil(Math.random() * 6)
+  return lancio
+}
+
+console.log('Tiro il dado: è uscito ' + lanciaDado())
+console.log('Tiro il dado: è uscito ' + lanciaDado())
+console.log('Tiro il dado: è uscito ' + lanciaDado())
+
+const x = 'ciao'
+x.toUpperCase() // 'CIAO'
+x.length // SENZA tonde! perchè è una PROPRIETÀ di x, NON UN METODO
