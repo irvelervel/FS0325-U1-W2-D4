@@ -199,3 +199,58 @@ console.log('Tiro il dado: è uscito ' + lanciaDado())
 const x = 'ciao'
 x.toUpperCase() // 'CIAO'
 x.length // SENZA tonde! perchè è una PROPRIETÀ di x, NON UN METODO
+
+// ESERCIZI
+// 1) scrivi una funzione che ritorni true se un numero fornito come parametro è maggiore di 10, false altrimenti
+
+const countNumber = function (n) {
+  if (n > 10) {
+    return true
+  } else {
+    return false
+  }
+}
+
+countNumber(50) // true
+
+// 2) scrivi una funzione che accetti due stringhe come parametri, le concateni insieme e ritorni il risultato senza la prima e l'ultima lettera
+
+const concatStrings = function (str1, str2) {
+  let result = str1 + str2
+  //   let result = str1.concat(str2)
+  result = result.slice(1, result.length - 1)
+  return result
+}
+
+console.log(concatStrings('Hello', 'World')) // 'elloWorl'
+
+// 3) // scrivi una funzione che accetti un numero come parametro: se è pari, la funzione deve ritornare questo numero moltiplicato per 3, se è dispari lo deve tornare sottratto di 5
+
+const calcolo = function (n) {
+  if (n % 2 === 0) {
+    // numero pari
+    return n * 3
+  } else {
+    // numero dispari
+    return n - 5
+  }
+}
+
+console.log(calcolo(10)) // 30
+console.log(calcolo(51)) // 46
+
+// 4) scrivi una funzione che esegua per un numero di volte fornito come parametro un'estrazione di un numero casuale (da 1 a 6), tornando la somma di tutti i numeri estratti
+
+const tiraMolteVolte = function (numeroVolte) {
+  let somma = 0 // parto da 0, si incrementerà ad ogni lancio del dado
+  for (let i = 0; i < numeroVolte; i++) {
+    // dobbiamo lanciare un dado tutte queste volte
+    somma = somma + lanciaDado() // Math.ceil(Math.random() * 6)
+  }
+  return somma
+}
+
+console.log(tiraMolteVolte(4))
+console.log(tiraMolteVolte(5))
+console.log(tiraMolteVolte(800))
+console.log(tiraMolteVolte(lanciaDado()))
